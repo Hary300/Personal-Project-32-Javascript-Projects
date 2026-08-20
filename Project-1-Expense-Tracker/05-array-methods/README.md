@@ -1,38 +1,27 @@
 # 05 — Array Methods
 
-Sekarang jangan menggunakan loop biasa dulu untuk fitur tertentu.
+## 🎯 Goal
 
-Latihan:
+Mengolah data transaksi menggunakan `reduce()` tanpa `filter()`.
 
-```js
-getIncome();
-```
+## 📋 Tasks
 
-Gunakan:
+Implementasikan:
 
-```js
-filter();
-getExpense();
-```
+- `getIncome()` → total semua `income`
+- `getExpense()` → total semua `expense`
+- `getBalance()` → `income - expense`
 
-Gunakan:
+Gunakan `reduce()` untuk menghitung total.
 
-```js
-filter();
-```
-
-Menghitung total
-
-Gunakan:
+## 💡 Example
 
 ```js
-reduce();
-```
+tracker.addIncome('Gaji', 5000000);
+tracker.addExpense('Makan', 50000);
+tracker.addExpense('Transport', 20000);
 
-Target:
-
-```js
-getIncome();
-getExpense();
-getBalance();
+tracker.getIncome(); // 5000000
+tracker.getExpense(); // 70000
+tracker.getBalance(); // 4930000
 ```

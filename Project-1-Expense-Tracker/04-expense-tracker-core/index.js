@@ -10,6 +10,12 @@ const createExpenseTracker = function () {
         description,
         amount,
       });
+
+      totalIncome = transactions
+        .filter((transaction) => transaction.type === 'income')
+        .reduce((accumulator, current) => {
+          return accumulator + current.amount;
+        }, 0);
     },
     addExpense(description, amount) {
       transactions.push({
@@ -17,22 +23,20 @@ const createExpenseTracker = function () {
         description,
         amount,
       });
+
+      totalExpense = transactions
+        .filter((transaction) => transaction.type === 'expense')
+        .reduce((accumulator, current) => {
+          return accumulator + current.amount;
+        }, 0);
     },
     getTransactions() {
       return transactions;
     },
     getIncome() {
-      totalIncome = transactions
-        .filter((transaction) => transaction.type === 'income')
-        .map((a) => a.amount)
-        .reduce((a, b) => a + b, 0);
       return totalIncome;
     },
     getExpense() {
-      totalExpense = transactions
-        .filter((transaction) => transaction.type === 'expense')
-        .map((a) => a.amount)
-        .reduce((a, b) => a + b, 0);
       return totalExpense;
     },
     getBalance() {
@@ -40,12 +44,19 @@ const createExpenseTracker = function () {
     },
   };
 };
+
 const tracker = createExpenseTracker();
 tracker.addIncome('Gaji', 5000000);
 tracker.addExpense('Makan', 50000);
 tracker.addExpense('Transport', 20000);
 
-console.log(tracker.getIncome());
-console.log(tracker.getExpense());
-console.log(tracker.getBalance());
+console.log('total income: ', tracker.getIncome());
+console.log('total expanse: ', tracker.getExpense());
+console.log('total balance: ', tracker.getBalance());
 console.log(tracker.getTransactions());
+
+const tracker2 = createExpenseTracker();
+tracker2.addIncome('uang saku', 250000);
+console.log('total balance: ', tracker2.getBalance());
+tracker2.addExpense('belanja', 10000);
+console.log('total balance: ', tracker2.getBalance());
