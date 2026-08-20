@@ -12,13 +12,30 @@ expenseTracker.js
 index.js
 ```
 
-`expenseTracker.js` berisi:
+`expenseTracker.js`
+
+- Pindahkan `createExpenseTracker()` ke file ini.
+- Export createExpenseTracker.
+
+`index.js`
+
+- Import createExpenseTracker.
+- Buat instance tracker.
+- Jalankan dan test semua method.
 
 ```js
-createExpenseTracker;
+console.log(tracker.getIncome());
+console.log(tracker.getExpense());
+console.log(tracker.getBalance());
 ```
 
-`index.js` digunakan untuk menjalankan dan mengetesnya.
+expected
+
+```
+5000000
+50000
+4950000
+```
 
 Gunakan:
 

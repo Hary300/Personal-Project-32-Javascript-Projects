@@ -61,3 +61,20 @@ User bisa:
 - Melihat total income
 - Melihat total expense
 - Menghapus transaksi
+
+## Gunakan DOM untuk:
+
+- Mengambil nilai dari form
+- Menambahkan transaksi
+- Menampilkan transaksi
+- Memperbarui total
+
+## ⚠️ Constraint
+
+Gunakan:
+
+```js
+document.querySelector();
+addEventListener();
+createElement();
+```
